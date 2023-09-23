@@ -41,6 +41,7 @@ function displayCoins() {
         price.innerHTML += `<li>${coins[i].price}</li>`;
         holdings.innerHTML += `<li>${coins[i].holdings}</li>`;
         displayValue.innerHTML += `<li>$${coins[i].price * coins[i].holdings}</li>`;
+        
         totalValue += coins[i].price * coins[i].holdings;
     }
 

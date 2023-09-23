@@ -16,6 +16,33 @@
     border-radius: 1rem;
 }
 
+.menuItems {
+    display: flex;
+    align-items: center;
+}
+
+.dropDown {
+    position: relative;
+}
+
+.dropDownAsset {
+    position: absolute;
+    left: 0;
+    top: calc(100% + 0.25rem);
+    background-color: white;
+    color: black;
+    padding: 0.75rem;
+    border-radius: 0.25rem;
+    margin: 0.5rem;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transition: opacity 200ms ease-in-out;
+}
+
+.dropDown > #addAsset:hover + .dropDownAsset {
+    opacity: 1;
+}
+
 nav {
     background-color: black;
     padding-top: 1rem;
@@ -33,11 +60,11 @@ nav a {
     text-decoration: none;
     color: white;
     padding: 0.5rem;
-
 }
 
 .logo {
-    font-size: 30px;
+    font-size: 50px;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .totals {
@@ -100,9 +127,6 @@ main {
     list-style: none; 
 }
 
-#listOfCoins {
-    border: 1px solid rgba(255, 255, 255, 0.273);
-}
 
 #addCoinForm {
     display: flex;
