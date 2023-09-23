@@ -13,6 +13,11 @@ let coins = [
         ticker: "BTC",
         price: 20000,
         holdings: 2
+    },
+    {
+        ticker: "AMP",
+        price: 1,
+        holdings: 2000
     }
 ];
 
@@ -23,7 +28,6 @@ let holdings = document.querySelector("#holdings");
 let displayValue = document.querySelector("#valueOfHoldings")
 
 let totalValue = 0;
-
 
 for (let i = 0; i < coins.length; i++) {
     ticker.innerHTML += `<li>${coins[i].ticker}</li>`;
@@ -47,4 +51,14 @@ function addCoin(ticker, price, holdings) {
     });
 }
 
+// Submit form handler
+document.getElementById('addCoinForm').addEventListener('submit', function(event) {
+    event.preventDefault();
 
+    let ticker = document.getElementById('ticker-input').value;
+    let price = parseFloat(document.getElementById('price-input').value);
+    let holdings = parseInt(document.getElementById('holdings-input').value);
+
+    addCoin(ticker, price, holdings);
+    displayCoins()
+});
