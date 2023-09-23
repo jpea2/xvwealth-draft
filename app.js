@@ -2,7 +2,7 @@ let coins = [
     {
         ticker: "XRP",
         price: 0.55,
-        holdings: 500
+        holdings: 500,
     },
     {
         ticker: "ETH",
@@ -20,9 +20,31 @@ let coins = [
 let ticker = document.querySelector("#ticker");
 let price = document.querySelector("#price");
 let holdings = document.querySelector("#holdings");
+let displayValue = document.querySelector("#valueOfHoldings")
+
+let totalValue = 0;
+
 
 for (let i = 0; i < coins.length; i++) {
     ticker.innerHTML += `<li>${coins[i].ticker}</li>`;
     price.innerHTML += `<li>${coins[i].price}</li>`;
     holdings.innerHTML += `<li>${coins[i].holdings}</li>`;
+    displayValue.innerHTML += `<li>$${coins[i].price * coins[i].holdings}</li>`;
+
+    // Calculate and add to total value
+    totalValue += coins[i].price * coins[i].holdings;
 }
+    
+    // Display total portfolio value
+document.querySelector("#totalValue").innerHTML = `<b>Portfolio Value:</b> $${totalValue}`;
+
+
+function addCoin(ticker, price, holdings) {
+    coins.push({
+        ticker: ticker,
+        price: price,
+        holdings: holdings
+    });
+}
+
+

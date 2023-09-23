@@ -16,49 +16,56 @@
         </div>
 
         <div>
-            <a href="">Add Asset</a>
+            <a href="" id="addAsset">Add Asset</a>
             <a href="">Transactions</a>
             <a href="">Reports</a>
-            <a href="">Log Out</a>  
+            <a href="" id="logOut">Log Out</a>  
         </div>
     </nav>
-    <div class="totals">
-        <div>
-            <div id="totalsSummary">
-                <p id="networth">$142,344 AUD</p>
-                <div>
+    <main>
+
+        <div class="totals">
+            <div>
+                <div id="totalsSummary">
+                    <p id="totalValue">$0</p>
                     <div>
-                        <p>Crypto:<br>Realestate:</p>
-                    </div>
-                    <div>
-                        <p>$100<br>$200</p>
+                        <div>
+                            <p>Crypto:<br>Realestate:</p>
+                        </div>
+                        <div>
+                            <p>$100<br>$200</p>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div id="graph">
-                <img src="Graph_of_Networth-removebg-preview.png" alt="">
+                <div id="graph">
+                    <img src="Graph_of_Networth-removebg-preview.png" alt="">
+                </div>
             </div>
         </div>
-    </div>
-    <main>
+    
         <div id="cryptoHoldings">
+            <h2>Cryptocurrency</h2>
             <ul id="listOfCoins">
 
                 <ul id="ticker">
-                    Ticker
+                    <u>Ticker</u>
                 </ul>
-                
+
                 <ul id="price">
-                    Price
+                    <u>Price</u>
                 </ul>
 
                 <ul id="holdings">
-                    Holdings
+                    <u><strong>Holdings</strong></u>
                 </ul>
 
+                <ul id="valueOfHoldings">
+                    <u><strong>Value</strong></u>
+                </ul>
             </ul>
         </div>
+
     </main>
     <footer></footer>
     <script src="app.js"></script>
