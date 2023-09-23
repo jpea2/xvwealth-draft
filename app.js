@@ -1,15 +1,26 @@
-let list = {
-    coin: "XRP",
-    holdings: 500,
+let xrp = {
+    ticker: ["XRP"],
     price: 0.55,
-
-    coin: "Bitcoin",
-    holdings: 2.4,
-    price: 24000
+    holdings: 500,
 };
 
-let listText = document.querySelector("#listOfCoins")
+let ethereum = {
+    ticker: ["ETH"],
+    price: 7.5,
+    holdings: 2000,
+};
 
-for (i = 0; i < list.coin.length; i++){
-    listText.innerHTML = <li> + $list.coin[i] + </li>
+let bitcoin = {
+    coins: ["BTC"],
+    price: 20000,
+    holdings: 2,
+};
+
+
+let listText = document.querySelector("#listOfCoins");
+
+for (let i = 0; i < list.coins.length; i++) {
+    listText.innerHTML += `<li>${
+        coins + price + holdings
+    }</li>`;
 }
