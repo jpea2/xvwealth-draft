@@ -45,41 +45,45 @@
         </div>
     
         <div id="cryptoHoldings">
-            <h2>Cryptocurrency</h2>
+            <h2>Cryptocurrency</h2> 
             <ul id="listOfCoins">
 
+                
                 <ul id="ticker">
-                    <u>Ticker</u>
+                    
                 </ul>
-
+                
                 <ul id="price">
-                    <u>Price</u>
+                    
                 </ul>
 
+                
                 <ul id="holdings">
-                    <u><strong>Holdings</strong></u>
                 </ul>
 
+                
                 <ul id="valueOfHoldings">
-                    <u><strong>Value</strong></u>
+                    
                 </ul>
             </ul>
+
+            <h2>Add Coin</h2>
+
+            <form id="addCoinForm">
+                <label for="ticker">Ticker:</label>
+                <input type="text" id="ticker-input" name="ticker"><br>
+    
+                <label for="price">Price:</label>
+                <input type="number" id="price-input" name="price"><br>
+    
+                <label for="holdings">Holdings:</label>
+                <input type="number" id="holdings-input" name="holdings"><br>
+    
+                <button type="submit">Add Coin</button>
+            </form>
+    
         </div>
-        <h2>Add Coin</h2>
-
-        <form id="addCoinForm">
-            <label for="ticker">Ticker:</label>
-            <input type="text" id="ticker-input" name="ticker"><br>
-
-            <label for="price">Price:</label>
-            <input type="number" id="price-input" name="price"><br>
-
-            <label for="holdings">Holdings:</label>
-            <input type="number" id="holdings-input" name="holdings"><br>
-
-            <button type="submit">Add Coin</button>
-        </form>
-
+       
     </main>
     <footer></footer>
     <script src="app.js"></script>

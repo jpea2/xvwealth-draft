@@ -21,27 +21,28 @@ let coins = [
     }
 ];
 
-
 let ticker = document.querySelector("#ticker");
 let price = document.querySelector("#price");
 let holdings = document.querySelector("#holdings");
 let displayValue = document.querySelector("#valueOfHoldings")
-
 let totalValue = 0;
 
-for (let i = 0; i < coins.length; i++) {
-    ticker.innerHTML += `<li>${coins[i].ticker}</li>`;
-    price.innerHTML += `<li>${coins[i].price}</li>`;
-    holdings.innerHTML += `<li>${coins[i].holdings}</li>`;
-    displayValue.innerHTML += `<li>$${coins[i].price * coins[i].holdings}</li>`;
+function displayCoins() {
+    ticker.innerHTML = `<li><u><b>Ticker</b></u></li>`;
+    price.innerHTML = `<li><u><b>Price</b></u></li>`;
+    holdings.innerHTML = `<li><u><b>Holdings</b></u></li>`;
+    displayValue.innerHTML = `<li><u><b>Value</b></u></li>`;
 
-    // Calculate and add to total value
-    totalValue += coins[i].price * coins[i].holdings;
+    for (let i = 0; i < coins.length; i++) {
+        ticker.innerHTML += `<li>${coins[i].ticker}</li>`;
+        price.innerHTML += `<li>${coins[i].price}</li>`;
+        holdings.innerHTML += `<li>${coins[i].holdings}</li>`;
+        displayValue.innerHTML += `<li>$${coins[i].price * coins[i].holdings}</li>`;
+        totalValue += coins[i].price * coins[i].holdings;
+    }
+
+    document.querySelector("#totalValue").innerHTML = `<b>Portfolio Value:</b> $${totalValue}`;
 }
-    
-    // Display total portfolio value
-document.querySelector("#totalValue").innerHTML = `<b>Portfolio Value:</b> $${totalValue}`;
-
 
 function addCoin(ticker, price, holdings) {
     coins.push({
@@ -49,9 +50,10 @@ function addCoin(ticker, price, holdings) {
         price: price,
         holdings: holdings
     });
+
+    displayCoins(); // Update the display after adding a coin
 }
 
-// Submit form handler
 document.getElementById('addCoinForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -60,5 +62,8 @@ document.getElementById('addCoinForm').addEventListener('submit', function(event
     let holdings = parseInt(document.getElementById('holdings-input').value);
 
     addCoin(ticker, price, holdings);
-    displayCoins()
 });
+
+// Display coins initially
+displayCoins();
+
