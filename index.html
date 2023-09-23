@@ -43,8 +43,25 @@
                 </div>
             </div>
         </div>
-    
+        
+
+        
         <div id="cryptoHoldings">
+            <h2>Add Coin</h2>
+
+            <form id="addCoinForm">
+                <label for="ticker">Ticker:</label>
+                <input type="text" id="ticker-input" name="ticker"><br>
+    
+                <label for="price">Price:</label>
+                <input type="number" step="0.01" id="price-input" name="price"><br>
+    
+                <label for="holdings">Holdings:</label>
+                <input type="number" step="0.01" id="holdings-input" name="holdings"><br>
+    
+                <button type="submit">Add Coin</button>
+            </form>
+
             <h2>Cryptocurrency</h2> 
             <ul id="listOfCoins">
 
@@ -67,20 +84,7 @@
                 </ul>
             </ul>
 
-            <h2>Add Coin</h2>
-
-            <form id="addCoinForm">
-                <label for="ticker">Ticker:</label>
-                <input type="text" id="ticker-input" name="ticker"><br>
-    
-                <label for="price">Price:</label>
-                <input type="number" id="price-input" name="price"><br>
-    
-                <label for="holdings">Holdings:</label>
-                <input type="number" id="holdings-input" name="holdings"><br>
-    
-                <button type="submit">Add Coin</button>
-            </form>
+            
     
         </div>
        

@@ -33,6 +33,9 @@ function displayCoins() {
     holdings.innerHTML = `<li><u><b>Holdings</b></u></li>`;
     displayValue.innerHTML = `<li><u><b>Value</b></u></li>`;
 
+    totalValue = 0;  // Reset total value before calculating
+
+
     for (let i = 0; i < coins.length; i++) {
         ticker.innerHTML += `<li>${coins[i].ticker}</li>`;
         price.innerHTML += `<li>${coins[i].price}</li>`;
@@ -41,7 +44,8 @@ function displayCoins() {
         totalValue += coins[i].price * coins[i].holdings;
     }
 
-    document.querySelector("#totalValue").innerHTML = `<b>Portfolio Value:</b> $${totalValue}`;
+    document.querySelector("#totalValue").innerHTML = `<b>Portfolio Value:</b> $${totalValue.toFixed(2)}`;
+
 }
 
 function addCoin(ticker, price, holdings) {
@@ -59,7 +63,7 @@ document.getElementById('addCoinForm').addEventListener('submit', function(event
 
     let ticker = document.getElementById('ticker-input').value;
     let price = parseFloat(document.getElementById('price-input').value);
-    let holdings = parseInt(document.getElementById('holdings-input').value);
+    let holdings = parseFloat(document.getElementById('holdings-input').value);
 
     addCoin(ticker, price, holdings);
 });
